@@ -1,0 +1,6 @@
+#!/bin/sh
+
+setcap 'cap_net_bind_service=+ep' /usr/bin/blocky
+chown -R blocky:blocky /var/log/blocky
+
+exit 0

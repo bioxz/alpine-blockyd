@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name="${RC_SVCNAME}"
+description="Blocky is a DNS proxy and ad-blocker"
+command="/usr/bin/blocky"
+pidfile="/run/${RC_SVCNAME}.pid"
+required_files="/etc/blocky/config.yml"
+command_args="-c /etc/blocky/config.yml"
+command_background=yes
+command_user="blocky:blocky"
+output_log="/var/log/blocky/${RC_SVCNAME}.log"
+error_log="/var/log/blocky/${RC_SVCNAME}.err"
+
+depend() {
+        need net
+        after firewall
+}

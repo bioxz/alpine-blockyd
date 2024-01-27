@@ -1,0 +1,3 @@
+# /etc/conf.d/blockyd
+
+CFGFILE="/etc/blocky/config.yml"
